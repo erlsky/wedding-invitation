@@ -57,7 +57,7 @@ section {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(30, 30, 30, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,6 +95,9 @@ section {
   border-top: 1px solid;
   margin-top: 10px;
   padding-top: 10px;
+}
+.invitation {
+  text-align: center;
 }
 .decorated-title {
   display: flex;
@@ -284,6 +287,9 @@ footer {
 @media (max-width: 860px) {
   .hero h1 {
     font-size: 3em;
+  }
+  .hero span {
+    font-size: 1.75em;
   }
   .timeline-row {
     font-size: 1.2em;
