@@ -8,7 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fafafa;
+  background: #fafafa url('../images/background.jpg');
   color: #333;
 }
 p {
@@ -63,15 +63,43 @@ section {
   justify-content: center;
   flex-direction: column;
 }
-.hero h1, .hero span {
+.hero-overlay h1, .hero-overlay span {
   color: white;
   z-index: 2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+}
+.hero span {
+  font-size: 2.5em;
+  font-weight: 200;
+}
+.hero-overlay span {
+  border-top: 1px solid;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 .hero h1 {
   font-size: 5em;
   margin: 0;
 }
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  bottom: 20px;
+}
+.countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .fade-in {
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
@@ -88,13 +116,6 @@ section {
 .fade-in-on-scroll.fade-in {
   opacity: 1;
   transform: translateY(0);
-}
-.hero span {
-  font-size: 2.5em;
-  font-weight: 200;
-  border-top: 1px solid;
-  margin-top: 10px;
-  padding-top: 10px;
 }
 .invitation {
   text-align: center;
@@ -175,7 +196,7 @@ footer {
   text-align: center;
   padding: 40px 20px;
   font-family: 'Great Vibes', cursive;
-  background: #f0f0f0;
+  background: rgb(71 71 71 / 21%);
   margin-top: 40px;
   letter-spacing: 2px;
   font-size: 36px;

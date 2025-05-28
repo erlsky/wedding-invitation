@@ -17,6 +17,13 @@
       <h1 class="fade-in">Богдан и Татьяна</h1>
       <span class="fade-in">19.07.2025</span>
     </div>
+
+    <div class="countdown fade-in" id="countdown">
+      <div><span id="days">--</span><small>дней</small></div>
+      <div><span id="hours">--</span><small>часов</small></div>
+      <div><span id="minutes">--</span><small>минут</small></div>
+      <div><span id="seconds">--</span><small>секунд</small></div>
+    </div>
   </header>
 
   <section class="two-columns invitation fade-in-on-scroll">
@@ -51,10 +58,11 @@
           <div class="date-month-year">ИЮЛЯ 2025</div>
         </div>
         <div class="place-block">
-          <div class="place-name">ДНТ Индия</div>
+          <div class="place-name">Банкет-холл "Гостиный двор"</div>
           <div class="place-desc">
-            Мошковский район, Новосибирская область<br>
-            <a href="https://go.2gis.com/G4Dws">Открыть на карте</a>
+            ​Красный проспект, 234/1, Новосибирск<br>
+            15 мин. пешком от м. Заельцовская<br>
+            <a href="https://go.2gis.com/bKy8F" target="_blank">Открыть на карте</a>
           </div>
         </div>
       </div>
@@ -212,6 +220,30 @@
         lightbox.style.display = 'none';
       }
     });
+    
+    function updateCountdown() {
+      const endDate = new Date("2025-07-19T00:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = endDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "<div>СЧАСТЛИВОГО ДНЯ! 💍</div>";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
